@@ -18,13 +18,14 @@ feature 'Admin view car categories' do
     expect(page).to have_content('Econo')
   end
 
-  scenario 'and view details' do
+  scenario 'and view details', js: true do #js: true to see the teste running in a browser
     CarCategory.create!(name: 'Top', daily_rate: 105.5, car_insurance: 58.5,
                         third_party_insurance: 10.5)
     CarCategory.create!(name: 'Flex', daily_rate: 80, car_insurance: 8.5,
                         third_party_insurance: 8.5)
 
     visit root_path
+    #byebug
     click_on 'Categorias'
     click_on 'Top'
 
