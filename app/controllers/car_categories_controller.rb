@@ -1,9 +1,9 @@
 class CarCategoriesController < ApplicationController
-    def index
-      @car_categories = CarCategory.all
-    end
+  def index
+    @car_categories = CarCategory.all
+  end
 
-    def show
-      @car_category = CarCategory.find(params[:id]) #params é um HASH {chave => valor}
-    end
+  def show
+    @car_category = CarCategory.find(params[:id]) #params é um HASH {chave => valor}
+  end
 end
