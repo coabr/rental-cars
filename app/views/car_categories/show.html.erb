@@ -1,13 +1,14 @@
 <h1><%= @car_category.name %></h1>
 
-
-<tr>
-  <th>Diária</th>
-  <th>Seguro do carro</th>
-  <th>Seguro de terceiros</th>
-</tr>
-<tr>
-  <td><%= number_to_currency @car_category.daily_rate %></td>
-  <td><%= number_to_currency @car_category.car_insurance %></td>
-  <td><%= number_to_currency @car_category.third_party_insurance %></td>
-</tr>
+<table>
+  <tr>
+    <th>Diária</th>
+    <th>Seguro do carro</th>
+    <th>Seguro de terceiros</th>
+  </tr>
+  <tr>
+    <td><%= number_to_currency @car_category.daily_rate %></td>
+    <td><%= number_to_currency @car_category.car_insurance %></td>
+    <td><%= number_to_currency @car_category.third_party_insurance %></td>
+  </tr>
+</table>
