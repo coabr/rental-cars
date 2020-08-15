@@ -7,7 +7,8 @@ feature 'Admin view car categories' do
                         third_party_insurance: 10.5)
     CarCategory.create!(name: 'Flex', daily_rate: 80, car_insurance: 8.5,
                         third_party_insurance: 8.5)
-    CarCategory.create!(name: 'Econo', daily_rate: 50, car_insurance: 8.5,                  third_party_insurance: 8.5)
+    CarCategory.create!(name: 'Econo', daily_rate: 50, car_insurance: 8.5, 
+                        third_party_insurance: 8.5)
   # Act -> Executra o código (navega pela aplicacao, vai pro home#index)
     visit root_path
     click_on 'Categorias'
@@ -18,7 +19,7 @@ feature 'Admin view car categories' do
     expect(page).to have_content('Econo')
   end
 
-  scenario 'and view details', js: true do #js: true to see the teste running in a browser
+  scenario 'and view details' do #, js: true --> if you put this before the 'do' you will be able to see the teste running in a pop up browser
     CarCategory.create!(name: 'Top', daily_rate: 105.5, car_insurance: 58.5,
                         third_party_insurance: 10.5)
     CarCategory.create!(name: 'Flex', daily_rate: 80, car_insurance: 8.5,
