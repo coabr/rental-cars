@@ -1,4 +1,27 @@
 require 'rails_helper'
 
-RSpec.describe CarCategory, type: :model do
+describe CarCategory, type: :model do
+  context 'validation' do
+    it 'attributes cannot be blank' do
+      category = CarCategory.new
+
+      category.valid?
+
+      expect(category.errors[:name]).to include('não pode ficar em branco')
+      expect(category.errors[:daily_rate]).to include('não pode ficar em '\
+                                                      'branco')
+      expect(category.errors[:third_party_insurance])
+        .to include('não pode ficar em branco')
+    end
+
+    it 'name must be uniq' do
+      CarCategory.create!(name: 'Top', daily_rate: 105.5, car_insurance: 58.5,
+                          third_party_insurance: 10.5)
+      category = CarCategory.new(name: 'Top')
+
+      category.valid?
+
+      expect(category.errors[:name]).to include('deve ser único')
+    end
+  end
 end
