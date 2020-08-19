@@ -11,6 +11,7 @@ feature 'Admin register valid car category' do
     fill_in 'Seguro para terceiros', with: ''
     click_on 'Enviar'
   
+    expect(CarCategory.count).to eq 0
     expect(page).to have_content('não pode ficar em branco', count: 4)
   end
   
