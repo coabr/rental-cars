@@ -21,7 +21,7 @@ describe CarCategory, type: :model do
 
       category.valid?
 
-      expect(category.errors[:name]).to include('deve ser único')
+      expect(category.errors[:name]).to include('já está em uso')
     end
   end
 end

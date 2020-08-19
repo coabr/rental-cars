@@ -28,7 +28,7 @@ feature 'Admin register valid car category' do
     fill_in 'Seguro para terceiros', with: '10'
     click_on 'Enviar'
 
-    expect(page).to have_content('deve ser único')
+    expect(page).to have_content('já está em uso')
   end
 
 end
