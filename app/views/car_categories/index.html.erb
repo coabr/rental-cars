@@ -1,10 +1,10 @@
 <%= link_to 'Voltar', root_path%> <br>
 
-<%= link_to 'Registrar uma nova categoria', new_car_category_path %>
+<p><%= link_to 'Registrar uma nova categoria', new_car_category_path %></p>
 
-<% @car_categories.each do |category| %>
-  <%= link_to category.name, category %> <!-- ruby entender que vai redirecionar para o path #show do object-->
-<% end %>
+<ol><% @car_categories.each do |category| %>
+  <li><%= link_to category.name, category %></li> <!-- ruby entender que vai redirecionar para o path #show do object-->
+<% end %></ol>
 
 <% if @car_categories.empty? %>
 		<%= 'Nenhuma categoria cadastrada' %>
