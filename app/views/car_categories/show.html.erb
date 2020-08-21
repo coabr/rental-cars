@@ -6,10 +6,12 @@
     <th>Diária</th>
     <th>Seguro do carro</th>
     <th>Seguro de terceiros</th>
+    <th>Editar Categorias</th>
   </tr>
   <tr style="text-align:right">
     <td><%= number_to_currency @car_category.daily_rate %></td>
     <td><%= number_to_currency @car_category.car_insurance %></td>
     <td><%= number_to_currency @car_category.third_party_insurance %></td>
+    <td style="text-align:center"><%= link_to 'Editar', edit_car_category_path(@car_category) %></td>
   </tr>
 </table>
