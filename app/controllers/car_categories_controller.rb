@@ -33,6 +33,12 @@ class CarCategoriesController < ApplicationController
 		end
   end
 
+  def destroy
+    @car_category = CarCategory.find(params[:id]) # achei
+    @car_category.destroy # apaguei
+    redirect_to car_categories_path # redirecionei
+  end
+
   private # tudo que está daqui pra baixo não é uma action, é um método
 
   def car_category_params

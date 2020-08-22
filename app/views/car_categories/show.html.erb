@@ -8,11 +8,13 @@
     <th><%= CarCategory.human_attribute_name(:car_insurance) %></th>
     <th><%= CarCategory.human_attribute_name(:third_party_insurance) %></th>
     <th>Editar categoria:</th>
+    <th>Excluir categoria:</th>
   </tr>
   <tr style="text-align:right">
     <td><%= number_to_currency @car_category.daily_rate %></td>
     <td><%= number_to_currency @car_category.car_insurance %></td>
     <td><%= number_to_currency @car_category.third_party_insurance %></td>
     <td style="text-align:center"><%= link_to 'Editar', edit_car_category_path(@car_category) %></td>
-  </tr>
+    <td style="text-align:center"><%= link_to 'Apagar', car_category_path(@car_category), method: :delete %></td> <!-- Usamos o metodo HTTP delete como symbol no method e nao a action do rails que se chama destroy-->
+   </tr>
 </table>
