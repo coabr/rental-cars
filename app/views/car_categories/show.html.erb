@@ -1,12 +1,13 @@
 <%= link_to 'Voltar', car_categories_path%> <br>
+
 <h1><%= @car_category.name %></h1>
 
 <table border="2px solid black">
   <tr>
-    <th>Diária</th>
-    <th>Seguro do carro</th>
-    <th>Seguro de terceiros</th>
-    <th>Editar Categorias</th>
+    <th><%= CarCategory.human_attribute_name(:daily_rate) %></th>
+    <th><%= CarCategory.human_attribute_name(:car_insurance) %></th>
+    <th><%= CarCategory.human_attribute_name(:third_party_insurance) %></th>
+    <th>Editar categoria:</th>
   </tr>
   <tr style="text-align:right">
     <td><%= number_to_currency @car_category.daily_rate %></td>
