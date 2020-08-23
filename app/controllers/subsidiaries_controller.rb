@@ -1,0 +1,2 @@
+class SubsidiariesController < ApplicationController
+end
