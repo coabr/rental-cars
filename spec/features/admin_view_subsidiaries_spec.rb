@@ -9,7 +9,7 @@ feature 'Admin view subsidiaries' do
 
 		#Act
 		visit root_path
-		click_on 'FIliais'
+		click_on 'Filiais'
 		
 		#Assert
 		expect(page).to have_content('FIori')
