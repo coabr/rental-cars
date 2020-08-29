@@ -12,7 +12,7 @@ feature 'Admin view subsidiaries' do
 		click_on 'Filiais'
 		
 		#Assert
-		expect(page).to have_content('FIori')
+		expect(page).to have_content('Fiori')
 		expect(page).to have_content('Estrada do encanamento, 1752')
 		expect(page).to have_content('Localiza')
 		expect(page).to have_content('Estrada do arraial, 1777')
